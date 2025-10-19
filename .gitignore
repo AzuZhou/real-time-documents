@@ -1,0 +1,9 @@
+# Go binaries
+server/server
+server/*.exe
+
+# Editor
+.vscode/
+
+# OS
+.DS_Store
