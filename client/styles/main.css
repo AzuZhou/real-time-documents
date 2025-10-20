@@ -3,3 +3,39 @@ body {
   background: #f9f9f9;
   color: #333;
 }
+
+#documents[data-state="loading"] #documents-loading {
+  display: block;
+}
+
+#documents[data-state="loading"] #documents-list,
+#documents[data-state="loading"] #documents-empty,
+#documents[data-state="loading"] #documents-error {
+  display: none;
+}
+
+#documents[data-state="loaded"] #documents-loading,
+#documents[data-state="loaded"] #documents-empty,
+#documents[data-state="loaded"] #documents-error {
+  display: none;
+}
+
+#documents[data-state="empty"] #documents-loading,
+#documents[data-state="empty"] #documents-list,
+#documents[data-state="empty"] #documents-error {
+  display: none;
+}
+
+#documents[data-state="empty"] #documents-empty {
+  display: block;
+}
+
+#documents[data-state="error"] #documents-loading,
+#documents[data-state="error"] #documents-list,
+#documents[data-state="error"] #documents-empty {
+  display: none;
+}
+
+#documents[data-state="error"] #documents-error {
+  display: block;
+}

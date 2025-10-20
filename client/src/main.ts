@@ -1,5 +1,7 @@
-function init() {
-  console.log("Showing!");
+import renderDocuments from "./documents";
+
+function renderApp() {
+  renderDocuments();
 }
 
-init();
+renderApp();

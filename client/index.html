@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -8,8 +8,22 @@
   </head>
   <body>
     <div id="app">
-      <main id="documents">
+      <main id="documents" data-state="loading">
         <h1>Documents</h1>
+
+        <div id="documents-list"></div>
+
+        <div id="documents-loading">
+          <span>Loading documents...</span>
+        </div>
+
+        <div id="documents-empty">
+          <span>No documents yet. Try creating one!</span>
+        </div>
+
+        <div id="documents-error">
+          <span>Our squad is working on it. Please come back later!</span>
+        </div>
       </main>
     </div>
 
