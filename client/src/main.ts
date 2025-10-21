@@ -1,6 +1,9 @@
 import renderDocuments from "./documents";
+import { loadDocuments } from "./state/store";
 
-function renderApp() {
+async function renderApp() {
+  await loadDocuments();
+
   renderDocuments();
 }
 
