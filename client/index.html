@@ -27,7 +27,42 @@
           </div>
         </section>
 
-        <section id="documents-form-container" data-form-state=""></section>
+        <section id="documents-form-container" data-form-state="">
+          <h1>Create a new document</h1>
+
+          <form id="documents-form">
+            <div class="documents-form-group">
+              <label for="documents-form-title">Title</label>
+              <input type="text" id="documents-form-title" name="title" required />
+            </div>
+
+            <div class="documents-form-group">
+              <label for="documents-form-version">Version</label>
+              <input
+                type="text"
+                id="documents-form-version"
+                name="version"
+                value="1.0.0"
+                required
+              />
+            </div>
+
+            <div class="documents-form-group">
+              <label for="documents-form-contributors">Contributors (comma-separated)</label>
+              <input type="text" id="documents-form-contributors" name="contributors" />
+            </div>
+
+            <div class="documents-form-group">
+              <label for="documents-form-attachments">Attachments (comma-separated)</label>
+              <input type="text" id="documents-form-attachments" name="attachments" />
+            </div>
+
+            <div id="documents-form-actions">
+              <button type="submit">Create Document</button>
+              <button id="documents-form-cancel">Cancel</button>
+            </div>
+          </form>
+        </section>
       </main>
     </div>
 

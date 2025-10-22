@@ -41,4 +41,4 @@ const addDocument = (document: Document) => {
   saveLocalDocument(document);
 };
 
-export { loadDocuments, getDocuments, addDocument };
+export { addDocument, loadDocuments, getDocuments };

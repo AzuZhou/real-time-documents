@@ -1,5 +1,5 @@
 import { createDocumentCard } from "./ui/documentCard.ts";
-import { getDocuments, addDocument } from "./state/store.ts";
+import { getDocuments } from "./state/store.ts";
 import { showCreateSection } from "./utils/helpers.ts";
 
 type DocumentsState = "loading" | "loaded" | "error" | "empty";

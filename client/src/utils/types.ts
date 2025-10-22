@@ -30,4 +30,4 @@ interface Document {
 
 type DocumentsSection = "documents-container" | "documents-form-container";
 
-export type { Document, ApiDocument, ApiContributor, DocumentsSection };
+export type { Document, Contributor, ApiDocument, ApiContributor, DocumentsSection };
