@@ -2,6 +2,7 @@ import fetchDocuments from "../api/documents";
 import { Document } from "../utils/types";
 import { handleDocuments } from "../utils/handlers";
 import { STORAGE_KEY } from "../utils/constants";
+import { sortDocuments } from "../utils/helpers";
 
 let documents: Document[] = [];
 
@@ -31,7 +32,9 @@ const loadDocuments = async () => {
 
   const localDocuments = getLocalDocuments();
 
-  documents = [...localDocuments, ...normalizedServerDocuments];
+  const mergedDocuments = [...localDocuments, ...normalizedServerDocuments];
+
+  documents = sortDocuments(mergedDocuments, "desc");
 };
 
 const getDocuments = () => documents;

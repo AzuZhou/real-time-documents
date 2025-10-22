@@ -30,4 +30,6 @@ interface Document {
 
 type DocumentsSection = "documents-container" | "documents-form-container";
 
-export type { Document, Contributor, ApiDocument, ApiContributor, DocumentsSection };
+type Sort = "asc" | "desc";
+
+export type { Document, Contributor, ApiDocument, ApiContributor, DocumentsSection, Sort };
