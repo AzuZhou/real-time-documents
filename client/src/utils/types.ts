@@ -28,4 +28,6 @@ interface Document {
   attachments: string[];
 }
 
-export type { Document, ApiDocument, ApiContributor };
+type DocumentsSection = "documents-container" | "documents-form-container";
+
+export type { Document, ApiDocument, ApiContributor, DocumentsSection };

@@ -8,22 +8,26 @@
   </head>
   <body>
     <div id="app">
-      <main id="documents" data-state="loading">
-        <h1>Documents</h1>
+      <main id="documents" data-active-section="documents-container">
+        <section id="documents-container" data-state="loading">
+          <h1>Documents</h1>
 
-        <div id="documents-list"></div>
+          <div id="documents-list"></div>
 
-        <div id="documents-loading">
-          <span>Loading documents...</span>
-        </div>
+          <div id="documents-loading">
+            <span>Loading documents...</span>
+          </div>
 
-        <div id="documents-empty">
-          <span>No documents yet. Try creating one!</span>
-        </div>
+          <div id="documents-empty">
+            <span>No documents yet. Try creating one!</span>
+          </div>
 
-        <div id="documents-error">
-          <span>Our squad is working on it. Please come back later!</span>
-        </div>
+          <div id="documents-error">
+            <span>Our squad is working on it. Please come back later!</span>
+          </div>
+        </section>
+
+        <section id="documents-form-container" data-form-state=""></section>
       </main>
     </div>
 

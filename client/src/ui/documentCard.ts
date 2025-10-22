@@ -27,7 +27,7 @@ const createDocumentCard = ({ id, title, version, contributors, attachments }: D
   card.dataset.id = id;
 
   const cardTitle = createDocumentCardElement("h2", title);
-  const cardVersion = createDocumentCardElement("span", version);
+  const cardVersion = createDocumentCardElement("span", `Version ${version}`);
   card.appendChild(createDocumentCardColumn([cardTitle, cardVersion]));
 
   const cardContributions = contributors.map((contributor) => {

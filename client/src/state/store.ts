@@ -18,6 +18,13 @@ const getLocalDocuments = (): Document[] => {
   }
 };
 
+const saveLocalDocument = (document: Document) => {
+  const localDocuments = getLocalDocuments();
+  localDocuments.push(document);
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(localDocuments));
+};
+
 const loadDocuments = async () => {
   const serverDocuments = await fetchDocuments();
   const normalizedServerDocuments = handleDocuments(serverDocuments);
@@ -29,4 +36,9 @@ const loadDocuments = async () => {
 
 const getDocuments = () => documents;
 
-export { loadDocuments, getDocuments };
+const addDocument = (document: Document) => {
+  documents = [document, ...documents];
+  saveLocalDocument(document);
+};
+
+export { loadDocuments, getDocuments, addDocument };
