@@ -18,25 +18,6 @@ body {
   font-family: system-ui, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  display: flex;
-  justify-content: center;
-}
-
-#app {
-  height: 100vh;
-}
-
-main {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
-
-section {
-  min-height: 100%;
-  width: 100%;
-  padding: 3rem 1.2rem;
 }
 
 h1 {
@@ -64,9 +45,5 @@ textarea {
 
   h2 {
     font-size: 1.4rem;
-  }
-
-  section {
-    padding: 6rem 2rem;
   }
 }

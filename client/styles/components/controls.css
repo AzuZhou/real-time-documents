@@ -1,0 +1,42 @@
+#documents-controls #sort-control {
+  display: flex;
+  align-items: center;
+
+  label {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  #sort-select {
+    border: none;
+    background-color: var(--background-color);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent-color);
+  }
+}
+
+#documents-controls #view-toggle button {
+  border: none;
+  font-size: 3rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--secondary-text-color);
+  transition: color 0.1s ease-in-out;
+
+  &.active {
+    color: var(--text-color);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #documents-controls #view-toggle button {
+    font-size: 2rem;
+  }
+}

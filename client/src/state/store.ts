@@ -1,8 +1,7 @@
 import fetchDocuments from "../api/documents";
-import { Document } from "../utils/types";
+import { Document, SortField, SortOrder, SortOption } from "../utils/types";
 import { handleDocuments } from "../utils/handlers";
 import { STORAGE_KEY } from "../utils/constants";
-import { sortDocuments } from "../utils/helpers";
 
 let documents: Document[] = [];
 
@@ -26,15 +25,48 @@ const saveLocalDocument = (document: Document) => {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(localDocuments));
 };
 
+const sortDocuments = (sortBy: SortOption = "createdAt-desc") => {
+  const [field, order] = sortBy.split("-") as [SortField, SortOrder];
+
+  documents.sort((a, b) => {
+    const aVal = a[field];
+    const bVal = b[field];
+
+    if (typeof aVal === "string" && typeof bVal === "string") {
+      if (field === "version") {
+        const comparison = aVal.localeCompare(bVal, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        });
+
+        return order === "asc" ? comparison : -comparison;
+      }
+
+      if (field === "title") {
+        const comparison = aVal.toLowerCase().localeCompare(bVal.toLowerCase());
+        return order === "asc" ? comparison : -comparison;
+      }
+    }
+
+    if (field === "createdAt") {
+      const aTime = new Date(aVal as string).getTime();
+      const bTime = new Date(bVal as string).getTime();
+      return order === "asc" ? aTime - bTime : bTime - aTime;
+    }
+
+    return 0;
+  });
+};
+
 const loadDocuments = async () => {
   const serverDocuments = await fetchDocuments();
   const normalizedServerDocuments = handleDocuments(serverDocuments);
 
   const localDocuments = getLocalDocuments();
 
-  const mergedDocuments = [...localDocuments, ...normalizedServerDocuments];
+  documents = [...localDocuments, ...normalizedServerDocuments];
 
-  documents = sortDocuments(mergedDocuments, "desc");
+  sortDocuments();
 };
 
 const getDocuments = () => documents;
@@ -44,4 +76,4 @@ const addDocument = (document: Document) => {
   saveLocalDocument(document);
 };
 
-export { addDocument, loadDocuments, getDocuments };
+export { addDocument, loadDocuments, getDocuments, sortDocuments };

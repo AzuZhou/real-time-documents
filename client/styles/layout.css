@@ -1,71 +1,27 @@
-#documents[data-active-section="documents-form-container"] #documents-container {
-  display: none;
-}
-
-#documents[data-active-section="documents-container"] #documents-form-container {
-  display: none;
-}
-
-section#documents-container {
-  max-width: 70rem;
-}
-section#documents-form-container {
-  max-width: 40rem;
-}
-
-#documents-container[data-state="loading"] #documents-list,
-#documents-container[data-state="loading"] #documents-empty,
-#documents-container[data-state="loading"] #documents-error {
-  display: none;
-}
-
-#documents-container[data-state="loaded"] #documents-loading,
-#documents-container[data-state="loaded"] #documents-empty,
-#documents-container[data-state="loaded"] #documents-error {
-  display: none;
-}
-
-#documents-container[data-state="empty"] #documents-loading,
-#documents-container[data-state="empty"] #documents-list,
-#documents-container[data-state="empty"] #documents-error {
-  display: none;
-}
-
-#documents-container[data-state="error"] #documents-loading,
-#documents-container[data-state="error"] #documents-list,
-#documents-container[data-state="error"] #documents-empty {
-  display: none;
-}
-
-#documents-container #documents-list {
-  display: grid;
-  gap: 0.6rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  align-items: stretch;
-  grid-auto-rows: 1fr;
-}
-
-#documents h1 {
-  margin-bottom: 2rem;
-}
-
-#documents-container .documents-state {
-  margin-top: 4rem;
+body {
   display: flex;
   justify-content: center;
+}
 
-  span {
-    text-align: center;
-    line-height: 1.6rem;
-  }
+#app {
+  height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  min-height: 100%;
+  width: 100%;
+  padding: 3rem 1.2rem;
 }
 
 @media screen and (min-width: 768px) {
-  #documents h1 {
-    margin-bottom: 4rem;
-  }
-
-  #documents-container .documents-state {
-    margin-top: 10rem;
+  section {
+    padding: 6rem 2rem;
   }
 }

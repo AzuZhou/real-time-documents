@@ -10,9 +10,38 @@
     <div id="app">
       <main id="documents" data-active-section="documents-container">
         <section id="documents-container" data-state="loading">
-          <h1>Documents</h1>
+          <header>
+            <h1>Documents</h1>
 
-          <div id="documents-list"></div>
+            <div id="documents-controls">
+              <div id="sort-control">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select">
+                  <option value="createdAt-desc" selected>Newest First (Default)</option>
+                  <option value="createdAt-asc">Oldest First</option>
+                  <option value="title-asc">Name (A-Z)</option>
+                  <option value="title-desc">Name (Z-A)</option>
+                  <option value="version-asc">Version (Low to High)</option>
+                  <option value="version-desc">Version (High to Low)</option>
+                </select>
+              </div>
+
+              <div id="view-toggle">
+                <button
+                  id="list-view-button"
+                  class="view-toggle-button active"
+                  aria-label="List view"
+                >
+                  ☰
+                </button>
+                <button id="grid-view-button" class="view-toggle-button" aria-label="Grid view">
+                  ⊞
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <div id="documents-list" data-view="list"></div>
 
           <div id="documents-loading" class="documents-state">
             <span>Loading documents...</span>
@@ -65,7 +94,7 @@
 
             <div id="documents-form-actions">
               <button type="submit" class="button form-button primary">Create Document</button>
-              <button id="documents-form-cancel" class="button form-button secondary">
+              <button type="button" id="documents-form-cancel" class="button form-button secondary">
                 Cancel
               </button>
             </div>
