@@ -20,12 +20,14 @@
 
 .button {
   border: none;
+  border-radius: 3px;
 
   &.add-document {
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
     color: var(--accent-color);
     font-size: 1rem;
+    order: -1;
 
     @media (prefers-reduced-motion: no-preference) {
       &:hover,
@@ -37,5 +39,64 @@
 
   &:active {
     transform: scale(0.98);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button.add-document {
+    order: 1;
+  }
+}
+
+.button.form-button {
+  padding: 1em 0.3em;
+  font-size: 1rem;
+  border: 1px solid;
+  transition: all 0.1s ease-in-out;
+
+  &.primary {
+    background-color: var(--accent-color);
+    color: var(--foreground-color);
+    border-color: var(--accent-color);
+  }
+
+  &.secondary {
+    background-color: var(--secondary-text-color);
+    color: var(--foreground-color);
+    border-color: var(--secondary-text-color);
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .button.form-button {
+    padding: 0.6em 1em;
+    font-size: 1rem;
+    border-radius: 3px;
+
+    &.primary {
+      background-color: var(--foreground-color);
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+
+      &:hover,
+      &:focus {
+        background-color: var(--accent-color);
+        color: var(--foreground-color);
+        border-color: var(--accent-color);
+      }
+    }
+
+    &.secondary {
+      background-color: var(--foreground-color);
+      color: var(--secondary-text-color);
+      border-color: var(--secondary-text-color);
+
+      &:hover,
+      &:focus {
+        background-color: var(--secondary-text-color);
+        color: var(--foreground-color);
+        border-color: var(--secondary-text-color);
+      }
+    }
   }
 }

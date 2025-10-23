@@ -19,15 +19,21 @@
           </div>
 
           <div id="documents-empty" class="documents-state">
-            <span>No documents yet. Try creating one!</span>
+            <span
+              >No documents yet.<br />
+              Try creating one!</span
+            >
           </div>
 
           <div id="documents-error" class="documents-state">
-            <span>Our squad is working on it. Please come back later!</span>
+            <span
+              >Our squad is working on it.<br />
+              Please come back later!</span
+            >
           </div>
         </section>
 
-        <section id="documents-form-container" data-form-state="">
+        <section id="documents-form-container">
           <h1>Create a new document</h1>
 
           <form id="documents-form">
@@ -58,8 +64,10 @@
             </div>
 
             <div id="documents-form-actions">
-              <button type="submit">Create Document</button>
-              <button id="documents-form-cancel">Cancel</button>
+              <button type="submit" class="button form-button primary">Create Document</button>
+              <button id="documents-form-cancel" class="button form-button secondary">
+                Cancel
+              </button>
             </div>
           </form>
         </section>
