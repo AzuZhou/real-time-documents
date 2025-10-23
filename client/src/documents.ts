@@ -10,6 +10,7 @@ const setContainerState = (state: DocumentsState, container: HTMLElement) => {
 
 const createAddButton = () => {
   const button = document.createElement("button");
+  button.className = "button add-document";
   button.textContent = "+ Add document";
   button.addEventListener("click", showCreateSection);
 

@@ -1,0 +1,61 @@
+#documents[data-active-section="documents-form-container"] #documents-container {
+  display: none;
+}
+
+#documents[data-active-section="documents-container"] #documents-form-container {
+  display: none;
+}
+
+#documents-container[data-state="loading"] #documents-list,
+#documents-container[data-state="loading"] #documents-empty,
+#documents-container[data-state="loading"] #documents-error {
+  display: none;
+}
+
+#documents-container[data-state="loaded"] #documents-loading,
+#documents-container[data-state="loaded"] #documents-empty,
+#documents-container[data-state="loaded"] #documents-error {
+  display: none;
+}
+
+#documents-container[data-state="empty"] #documents-loading,
+#documents-container[data-state="empty"] #documents-list,
+#documents-container[data-state="empty"] #documents-error {
+  display: none;
+}
+
+#documents-container[data-state="error"] #documents-loading,
+#documents-container[data-state="error"] #documents-list,
+#documents-container[data-state="error"] #documents-empty {
+  display: none;
+}
+
+#documents-container #documents-list {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+#documents-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#documents-container .documents-state {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  #documents-container h1 {
+    text-align: left;
+    margin-bottom: 4rem;
+  }
+
+  #documents-container .documents-state {
+    margin-top: 10rem;
+  }
+}

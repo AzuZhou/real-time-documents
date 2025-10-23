@@ -30,15 +30,19 @@ const createDocumentCard = ({ id, title, version, contributors, attachments }: D
   const cardVersion = createDocumentCardElement("span", `Version ${version}`);
   card.appendChild(createDocumentCardColumn([cardTitle, cardVersion]));
 
-  const cardContributions = contributors.map((contributor) => {
-    return createDocumentCardElement("p", contributor.name);
-  });
-  card.appendChild(createDocumentCardColumn(cardContributions));
+  if (contributors.length !== 0) {
+    const cardContributions = contributors.map((contributor) => {
+      return createDocumentCardElement("p", contributor.name);
+    });
+    card.appendChild(createDocumentCardColumn(cardContributions));
+  }
 
-  const cardAttachments = attachments.map((attachment) => {
-    return createDocumentCardElement("p", attachment);
-  });
-  card.appendChild(createDocumentCardColumn(cardAttachments));
+  if (attachments.length !== 0) {
+    const cardAttachments = attachments.map((attachment) => {
+      return createDocumentCardElement("p", attachment);
+    });
+    card.appendChild(createDocumentCardColumn(cardAttachments));
+  }
 
   return card;
 };

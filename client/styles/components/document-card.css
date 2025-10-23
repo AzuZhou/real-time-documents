@@ -1,0 +1,32 @@
+#documents-list .document-card {
+  background-color: var(--foreground-color);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(123, 136, 156, 0.05);
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(123, 136, 156, 0.1);
+  }
+
+  .document-card-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 0.4rem;
+  }
+
+  p,
+  span {
+    line-height: 1.6rem;
+    color: var(--secondary-text-color);
+  }
+}

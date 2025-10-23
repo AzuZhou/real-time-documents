@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #333c46;
+  --secondary-text-color: #7b889c;
+  --foreground-color: #ffffff;
+  --background-color: #f2f4f8;
+  --accent-color: #4278f5;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 70rem;
+}
+
+section {
+  min-height: 100%;
+  padding: 3rem 1.2rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  section {
+    padding: 6rem 2rem;
+  }
+}
