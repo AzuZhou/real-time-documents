@@ -4,6 +4,7 @@ import { handleDocuments } from "../utils/handlers";
 import { STORAGE_KEY } from "../utils/constants";
 
 let documents: Document[] = [];
+let currentSort: SortOption = "createdAt-desc";
 
 const getLocalDocuments = (): Document[] => {
   const stored = localStorage.getItem(STORAGE_KEY);
@@ -74,6 +75,7 @@ const getDocuments = () => documents;
 const addDocument = (document: Document) => {
   documents = [document, ...documents];
   saveLocalDocument(document);
+  sortDocuments(currentSort);
 };
 
 export { addDocument, loadDocuments, getDocuments, sortDocuments };

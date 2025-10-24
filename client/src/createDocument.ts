@@ -1,15 +1,7 @@
 import { showDocumentsSection } from "./utils/helpers";
+import { parseCommaSeparated } from "./utils/parsers";
 import { addDocument } from "./state/store";
 import { Document, Contributor } from "./utils/types";
-
-const parseCommaSeparated = (input: string): string[] => {
-  if (!input) return [];
-
-  return input
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-};
 
 const parseContributors = (input: string): Contributor[] => {
   if (!input) return [];
