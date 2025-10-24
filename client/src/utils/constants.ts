@@ -2,6 +2,6 @@ const STORAGE_KEY = "added-documents";
 
 const RECONNECT_DELAY = 3000;
 
-const RESET_DELAY = 5000;
+const RESET_DELAY = 10000;
 
 export { STORAGE_KEY, RECONNECT_DELAY, RESET_DELAY };

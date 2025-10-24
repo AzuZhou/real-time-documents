@@ -1,6 +1,7 @@
 #documents-controls #sort-control {
   display: flex;
   align-items: center;
+  gap: 0.2rem;
 
   label {
     font-size: 1rem;

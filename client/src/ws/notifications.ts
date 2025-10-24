@@ -69,4 +69,6 @@ const connectNotifications = () => {
   };
 };
 
-export { connectNotifications, disconnectNotifications };
+const getWebSocket = () => ws;
+
+export { connectNotifications, disconnectNotifications, getWebSocket };

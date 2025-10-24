@@ -58,4 +58,15 @@ const updateBadge = () => {
   }
 };
 
-export { incrementNotificationCount };
+const __resetForTesting = () => {
+  notificationCount = 0;
+  if (resetTimer) {
+    clearTimeout(resetTimer);
+    resetTimer = null;
+  }
+  updateBadge();
+};
+
+const getNotificationCount = () => notificationCount;
+
+export { incrementNotificationCount, getNotificationCount, __resetForTesting };
