@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Real Time Documents</title>
     <link rel="stylesheet" href="./styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <div id="app">
+      <div id="notification-toast" class="toast hidden">
+        <div class="badge-wrapper">
+          <i class="notification-icon fas fa-bell"></i>
+          <span id="notification-count">0</span>
+        </div>
+        <p class="notification-text">New document added</p>
+      </div>
+
       <main id="documents" data-active-section="documents-container">
         <section id="documents-container" data-state="loading">
           <header>

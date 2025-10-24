@@ -1,3 +1,17 @@
+interface NotificationMessage {
+  Timestamp: string;
+  UserID: string;
+  UserName: string;
+  DocumentID: string;
+  DocumentTitle: string;
+}
+
+interface HeartbeatMessage {
+  type: "connected" | "ping";
+}
+
+type ServerMessage = NotificationMessage | HeartbeatMessage;
+
 interface ApiContributor {
   ID: string;
   Name: string;
@@ -35,6 +49,9 @@ type SortOrder = "asc" | "desc";
 type SortOption = `${SortField}-${SortOrder}`;
 
 export type {
+  HeartbeatMessage,
+  NotificationMessage,
+  ServerMessage,
   Document,
   Contributor,
   ApiDocument,
